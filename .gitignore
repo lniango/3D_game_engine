@@ -1,0 +1,270 @@
+# User-specific files
+*.userosscache
+*.suo
+*.userprefs
+
+# User-specific files for Visual Studio for Mac
+.vscode/
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Dd]Release/
+[Dd]ReleasePublic/
+x64/
+x86/
+ARM/
+arm64/
+*.obj
+*.exe
+*.dll
+*.pdb
+*.idb
+*.ipdb
+*.iobj
+*.so
+*.lib
+*.a
+*.app
+*.dSYM/
+
+# Uncomment if you have CMakeLists.txt
+# CMake specific files
+CMakeFiles/
+CMakeCache.txt
+*.cmake
+*.dir
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows Installer files (if you're using a setup project)
+*.wixpdb
+
+# Windows Store app package directory
+AppPackages/
+
+# Windows Store app build output
+Packages/
+
+# Windows User-specific files
+Thumbs.db
+Desktop.ini
+
+# JetBrains Rider / IntelliJ IDEA
+.idea/
+
+# VS for Mac
+.vscode/
+
+# VS Code specific files
+.vscode/
+
+# NPM package directory for node-based build tools (such as Gulp, Grunt)
+node_modules/
+
+# VS2019 files
+.vs2019/
+
+# ASP.NET Core files (can be useful if you use this in a mixed C++/ASP.NET environment)
+wwwroot/
+
+# Temporary folders used by Visual Studio
+.vs/
+
+# Backup files
+*.bak
+*.swp
+
+
+# =====================================
+# CLion
+# =====================================
+
+.idea/
+*.iml
+
+# Si tu veux partager les configurations du projet
+# garde .idea et ignore seulement :
+# .idea/workspace.xml
+# .idea/tasks.xml
+# .idea/shelf/
+
+# =====================================
+# CMake
+# =====================================
+
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+CTestTestfile.cmake
+compile_commands.json
+Makefile
+install_manifest.txt
+
+# =====================================
+# Ninja
+# =====================================
+
+.ninja_deps
+.ninja_log
+build.ninja
+
+# =====================================
+# Compilation C/C++
+# =====================================
+
+*.o
+*.obj
+*.so
+*.a
+*.la
+*.lo
+*.dll
+*.dylib
+*.lib
+*.exp
+*.pdb
+
+# =====================================
+# Executables
+# =====================================
+
+*.exe
+*.out
+*.app
+
+game_engine
+
+# =====================================
+# Debug
+# =====================================
+
+*.dSYM/
+*.su
+*.idb
+
+# =====================================
+# LLVM / Clang
+# =====================================
+
+*.profraw
+*.profdata
+
+# =====================================
+# macOS
+# =====================================
+
+.DS_Store
+.AppleDouble
+.LSOverride
+
+Icon
+
+._*
+
+.Spotlight-V100
+.Trashes
+
+# =====================================
+# Logs
+# =====================================
+
+*.log
+
+# =====================================
+# Temporary files
+# =====================================
+
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# =====================================
+# Archives
+# =====================================
+
+*.zip
+*.tar
+*.gz
+*.rar
+*.7z
+
+# =====================================
+# VSCode (si utilisé)
+# =====================================
+
+.vscode/
+
+# =====================================
+# Visual Studio
+# =====================================
+
+.vs/
+
+# =====================================
+# Generated documentation
+# =====================================
+
+docs/html/
+docs/latex/
+
+# =====================================
+# Coverage
+# =====================================
+
+coverage/
+*.gcda
+*.gcno
+*.gcov
+
+# =====================================
+# Cache
+# =====================================
+
+.cache/
+
+# =====================================
+# Package managers
+# =====================================
+
+conanbuildinfo.*
+conan.lock
+conan/
+
+vcpkg_installed/
+
+# =====================================
+# Third-party builds
+# =====================================
+
+third_party/**/build/
+external/**/build/
+deps/**/build/
+
+# =====================================
+# Render captures
+# =====================================
+
+captures/
+profiling/
+benchmarks/results/
+
+# =====================================
+# Shader compilation cache
+# =====================================
+
+shader_cache/
+cache/
+
+# =====================================
+# Generated assets
+# =====================================
+
+generated/
