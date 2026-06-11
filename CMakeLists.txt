@@ -11,8 +11,10 @@ add_executable(game_engine
         DX3D/Include/DX3D/Window/Window.h
         DX3D/Source/DX3D/Game/Game.cpp
         DX3D/Include/DX3D/Game/Game.h
-        DX3D/Source/DX3D/Game/Win32/Win32Game.cpp
-        DX3D/Source/DX3D/Game/Win32/Win32Game.h
         DX3D/Include/DX3D/Core/Core.cpp
         DX3D/Include/DX3D/Core/Core.h
         DX3D/Include/All.h)
+
+
+find_package(glfw3 REQUIRED)
+target_link_libraries(game_engine PRIVATE glfw)

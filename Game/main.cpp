@@ -5,8 +5,16 @@
 
 int main ()
 {
-    DX3D::Game game{};
-    game.run();
+    DX3D::Window window;
+
+    while (!window.shouldClose())
+    {
+        window.pollEvents();
+
+        // rendering
+
+        window.swapBuffers();
+    }
 
     return 0;
 }

@@ -5,33 +5,48 @@
 #include "/Users/kyo/Documents/projects/game_engine/DX3D/Include/DX3D/Window/Window.h"
 #include <stdexcept>
 
-DX3D::Window::Window() : Base()
-{
-    WNDCLASSEX wc{};
-    wc.cbSize = sizeof(WNDCLASSEX);
-    wc.lpszClassName = L"DX3DWindow";
-    wc.lpfnWndProc = DefWindowProc;
-    auto windowClassId = RegisterClassEx(&wc);
+
+namespace DX3D {
+    Window::Window() : Base()
+    {
+        if (!glfwInit())
+            throw std::runtime_error("Failed to initialize GLFW");
+
+        // Optionnal -> recommended for opengl
+        glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+        glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+        glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+
+#ifdef __APPLE__
+        glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
+#endif
+
+        m_window = glfwCreateWindow(1280, 720, "DX3D Engine", nullptr, nullptr);
+
+        if (!m_window)
+        {
+            glfwTerminate();
+            throw std::runtime_error("Failed to create GLFW window");
+        }
+
+        glfwMakeContextCurrent(m_window);
+    }
 
 
-    if (!windowClassId)
-        throw std::runtime_error("RegisterClassEx failed.");
+    DX3D::Window::~Window() {
+        glfwDestroyWindow(m_window);
+        glfwTerminate();
+    }
 
-    RECT rc{ 0, 0, 1280, 720 };
-    AdjustWindowRect(&rc, WS_OVERLAPPED | WS_CAPTION | WS_SYSMENU, false);
+    bool Window::shouldClose() const {
+        return glfwWindowShouldClose(m_window);
+    }
 
-    m_handle = CreateWindowEx(NULL, MAKEINTATOM(windowClassId), L"PardCode | C++ 3D Game Engine",
-        WS_OVERLAPPED | WS_CAPTION | WS_SYSMENU, CW_USEDEFAULT, CW_USEDEFAULT,
-        rc.right - rc.left, rc.bottom - rc.top,
-        NULL, NULL, NULL, NULL);
+    void Window::pollEvents() {
+        glfwPollEvents();
+    }
 
-    if (!m_handle)
-        throw std::runtime_error("CreateWindow failed.");
-
-    ShowWindow(static_cast<HWND>(m_handle), SW_SHOW);
-}
-
-
-DX3D::Window::~Window() {
-    DestroyWindow(static_cast<HWND>(m_handle));
+    void Window::swapBuffers() {
+        glfwSwapBuffers(m_window);
+    }
 }

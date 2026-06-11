@@ -15,7 +15,7 @@ namespace DX3D {
         Game();
         ~Game() override;
 
-        virtual void run() final;
+        //virtual void run() final;
 
     private:
         Window* m_display{};
